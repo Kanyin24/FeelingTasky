@@ -5,19 +5,28 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="dragBarStyles.css">
     <title>Drag Bar</title>
   </head>
-  <body>
+  <body id="body">
 
     <a href="index.html">Home Page</a>
     <a href="dragBar.html">Button to get to drag and drop page</a>
 
    <h1>this is the drag page</h1>
-   
-   <img src="land.jpeg">
-   <br><br>
 
-   <script src="index.js"></script>
+   <div class="task-list">
+    <div class="list" id="initial-list-spot">
+    </div>
+     <div class="list" id="A">
+     </div>
+     <div class="list" id="B">
+    </div>
+    <div class="list" id="C">
+    </div>
+   </div>
+
+   <script src="index.html"></script>
    <script src="main.js"></script>
 
   </body>

@@ -1,0 +1,18 @@
+.task-list{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list{
+  margin: 30px ;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(48, 145, 145);
+  border-radius: 10px;
+}
+
+.list p{
+  background-color: aquamarine;
+  padding: 2px;
+  border-radius: 7px;
+}
