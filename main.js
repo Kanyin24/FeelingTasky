@@ -92,7 +92,23 @@ const listOfTasks = ["one", "two", "three"];
 
 
 // SECTION 3
+const Work1 = ['English work', 'Finish calc homework', 'Finish French speech']
+let Count = 0;
+let Length1;
+let Task1;
 
+function ArrayWork(Array1, Array2, Array3)
+{
+    Length1 = Array1.Length - 1;
+    Task1 = Array1[Math.floor(Math.random() * Length)];
+    Task1 = Array1[Task1];
+
+    //looping through array1
+    /*for (let i = 0; i<Array1.Length; i++)
+    {
+        Count = Array1[Math.floor(Math.random() * 4];
+    }  */
+}
 
 
 
