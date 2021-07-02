@@ -108,10 +108,26 @@ function ArrayWork(Array1, Array2, Array3)
     {
         Count = Array1[Math.floor(Math.random() * 4];
     }  */
+
+  
+
 }
 
+
+ 
 //TIMER
-var countDownDate = new Date("July 3, 2021").getTime();
+
+ let inputTime;
+function addTimeInput(){
+
+  inputTime = document.getElementById('time').value * 60 * 60 * 1000;
+
+}
+ // add event listener for timer button
+ document.getElementById('setTime').addEventListener('click', addTimeInput);
+
+// make starting count time by adding input
+var countDownTime = new Date().getTime() + inputTime;
 
 // Update the count down every 1 second
 var timeLeft = setInterval(function() {
@@ -120,10 +136,10 @@ var timeLeft = setInterval(function() {
   var now = new Date().getTime();
     
   // Find the distance between now and the count down date
-  var timeRemaining = countDownDate - now;
+  var timeRemaining = countDownTime - now;
     
   // Time calculations for days, hours, minutes and seconds
-  var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var hours = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60 * 60));
   var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
     
