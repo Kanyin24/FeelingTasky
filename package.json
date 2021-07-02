@@ -1,0 +1,23 @@
+{
+  "name": "feelingtasky",
+  "version": "1.0.0",
+  "description": "AtlasHacksII",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foxnaut/FeelingTasky.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Foxnaut/FeelingTasky/issues"
+  },
+  "homepage": "https://github.com/Foxnaut/FeelingTasky#readme",
+  "devDependencies": {
+    "electron": "^13.1.5"
+  }
+}
