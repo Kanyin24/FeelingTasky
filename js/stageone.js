@@ -32,7 +32,7 @@ for (j = 0; j < close.length; j += 1) {
 
 function addTaskToList() {
   // let input = document.getElementById('zero');
-  document.write());
+  document.write();
 }
 
 // listen for click on add button and call addTaskToList

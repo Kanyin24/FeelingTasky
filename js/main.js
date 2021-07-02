@@ -110,6 +110,7 @@ function ArrayWork(Array1, Array2, Array3)
     }  */
 }
 
+//TIMER
 var countDownDate = new Date("July 3, 2021").getTime();
 
 // Update the count down every 1 second
@@ -126,14 +127,14 @@ var timeLeft = setInterval(function() {
   var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="demo"
+  // Output the result in an element
   document.getElementById("countdown").innerHTML = hours + "h "
   + minutes + "m " + seconds + "s ";
     
-  // If the count down is over, write some text 
+  // If the count down is over, write 
   if (distance < 0) {
     clearInterval(timeLeft);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
+    document.getElementById("countdown").innerHTML = "TIME's UP!";
   }
 }, 1000);
 
