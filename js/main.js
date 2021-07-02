@@ -96,7 +96,10 @@ const Work1 = ['English work', 'Finish calc homework', 'Finish French speech']
 let Count = 0;
 let Length1;
 let Task1;
+//event listener to call ArrayWork
+document.getElementById('next').addEventListener('click', ArrayWork)
 
+  
 function ArrayWork(Array1, Array2, Array3)
 {
     Length1 = Array1.Length - 1;
@@ -109,27 +112,31 @@ function ArrayWork(Array1, Array2, Array3)
         Count = Array1[Math.floor(Math.random() * 4];
     }  */
 
-  
-
 }
 
 
  
 //TIMER
 
- let inputTime;
-function addTimeInput(){
-
-  inputTime = document.getElementById('time').value * 60 * 60 * 1000;
-
-}
  // add event listener for timer button
  document.getElementById('setTime').addEventListener('click', addTimeInput);
 
-// make starting count time by adding input
-var countDownTime = new Date().getTime() + inputTime;
+ let inputTime;
 
-// Update the count down every 1 second
+ //adding the input value to the variable for usage of Countdown Timer
+function addTimeInput(){
+
+  inputTime = document.getElementById('time').value *60 * 1000; //convert to milliseconds
+  
+  var countDownTime = new Date().getTime() + inputTime;
+ 
+  //TestCODE
+  var isItWorking = document.createElement("P");
+  isItWorking.innerHTML = inputTime.toString() + "milliseconds";
+  document.body.appendChild(isItWorking); 
+  //
+ 
+  // Update the count down every 1 second
 var timeLeft = setInterval(function() {
 
   // Get today's date and time
@@ -139,7 +146,7 @@ var timeLeft = setInterval(function() {
   var timeRemaining = countDownTime - now;
     
   // Time calculations for days, hours, minutes and seconds
-  var hours = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60 * 60));
+  var hours = Math.floor((timeRemaining % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
   var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
     
@@ -148,11 +155,14 @@ var timeLeft = setInterval(function() {
   + minutes + "m " + seconds + "s ";
     
   // If the count down is over, write 
-  if (distance < 0) {
+  if (timeRemaining < 0) {
     clearInterval(timeLeft);
     document.getElementById("countdown").innerHTML = "TIME's UP!";
   }
 }, 1000);
+}
+
+
 
 
 
