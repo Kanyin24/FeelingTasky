@@ -2,7 +2,7 @@
   "name": "feelingtasky",
   "version": "1.0.0",
   "description": "AtlasHacksII",
-  "main": "index.js",
+  "main": "render.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"

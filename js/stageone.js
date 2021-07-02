@@ -7,7 +7,7 @@
 // creates the close button for each item in the list
 const myNodelist = document.getElementsByTagName('LI');
 let i = 0;
-
+addTaskToList()
 for (i = 0; i < myNodelist.length; i += 1) {
   let span = document.createElement('SPAN');
   let txt = document.createElement('P'); // this is the P tag
@@ -31,8 +31,8 @@ for (j = 0; j < close.length; j += 1) {
 }
 
 function addTaskToList() {
-  const input = document.getElementById('input');
-  console.log(input);
+  // let input = document.getElementById('zero');
+  document.write());
 }
 
 // listen for click on add button and call addTaskToList
