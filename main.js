@@ -4,9 +4,6 @@ const listA = [], listB = [], listC = [];
 
 
 
-
-
-
 // SECTION 2
 
 const listOfTasks = ["one", "two", "three"];

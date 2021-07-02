@@ -4,18 +4,37 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
+    <link rel="stylesheet" href="stageone.css">
+   </head>
+
   <body>
+    <!-- development links -->
+    <a href="index.html">Home</a>
+    <br><br><br>
+    <a href="dragBar.html">Drag and Drop</a>
+    
+    <div id="start" class="header">
+      <h2>To Do List</h2>
+      <input type="text", id="input", placeholder="Task...">
+      <button id="add" class="addBtn">Add</button>
+    </div>
 
-    <a href="index.html">Home Page</a>
-    <a href="dragBar.html">Button to get to drag and drop page</a>
+    <!-- <button id="delete">Delete a task.</button> -->
+    <div class="body"></div>
+    <ul id="tasks">
+      <li>Taking out the trash.</li>
+      <li>Doing the laundry.</li>
+      <li>Feeding and bathing the cat.</li>
+    </ul>
 
+    <!-- need to implement the function here -->
+    <div id="next" class="footer">
+      <a id="submit" class="Btn" href="dragBar.html">I'm done.</a>
+    </div>
 
-   <h1>this is where they input their tasks</h1>
-   
-
-   <script src="index.html"></script>
+    <script src="index.js"></script>
+    <script src="stageone.js"></script>
+    <script src="main.js"></script>
 
   </body>
 </html>

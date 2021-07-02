@@ -1,2 +1,5 @@
-# untracked files
+# untracked directories
 node_modules
+
+# untracked files
+.eslintrc.js
