@@ -1,9 +1,3 @@
-// var span = document.createElement('SPAN');
-// var txt = document.createElement('P'); // this is the P tag
-// txt.innerHTML = '\u00D7';
-
-// document.body.appendChild(txt);
-
 // creates the close button for each item in the list
 const myNodelist = document.getElementsByTagName('LI');
 let i = 0;
