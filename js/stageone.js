@@ -25,13 +25,13 @@ for (j = 0; j < close.length; j += 1) {
 
 
 function submitTasks () {
-  window.location.href='https://google.com'; 
+  console.log("worked"); 
 }
 
 
 
 // listen for click on add button and call addTaskToList
-document.getElementById('add').addEventListener('click', addTaskToList);
+//document.getElementById('add').addEventListener('click', addTaskToList);
 
 // listen for click on next button and call submitTasks
 document.getElementById('submit').addEventListener('click', submitTasks);
