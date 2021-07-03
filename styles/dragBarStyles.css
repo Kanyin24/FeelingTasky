@@ -159,6 +159,8 @@ h2{
 }
 
 #current-task{
+  font-weight: bolder;
+  color: rgb(189, 4, 4) ;
   font-size: 45px; 
   margin: 15px;
   font-family: Tahoma, sans-serif;

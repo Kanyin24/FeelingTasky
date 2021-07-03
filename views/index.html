@@ -4,32 +4,37 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <link rel="stylesheet" href="../styles/stageone.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/indexStyles.css">
    </head>
 
   <body id="body">
-    <!-- development links -->
-    <a href="index.html">Home</a>
-    <br><br><br>
-    <a href="dragBar.html">Drag and Drop</a>
+    <nav>
+      <a href="index.html">Add Tasks</a>
+      <div class="line"></div>
+      <a href="dragBar.html">Start Tasking</a>
+    </nav>
+
+    <h2>Current Tasks</h2>
+
+    <div class="input-area">
+      <div class="enter">
+        <input type="text", id="zero", placeholder="Task...">
+        <button id="add" class="Btn">Add</button>
+      </div>
+      <div class="listed-items">
+        <ul id="tasks">
+        </ul>
+      </div>
+      <div class="footer">
+        <button id="submit" class="Btn" >Rank Tasks</button>
+      </div>
+    </div>
     
-    <div class="header">
-      <h2>To Do List</h2>
-      <input type="text", id="zero", placeholder="Task...">
-      <button id="add" class="Btn">Add</button>
-    </div>
 
-    <div class="body">
-      <ul id="tasks">
-        <li>Taking out the trash.</li>
-        <li>Doing the laundry.</li>
-        <li>Feeding and bathing the cat.</li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <button id="submit" class="Btn" >I'm done.</button>
-    </div>
+  
 
     <script src="../js/main.js"></script>
   </body>

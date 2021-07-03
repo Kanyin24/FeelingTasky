@@ -1,0 +1,112 @@
+body{
+  margin: 0 ;
+  background-color: rgb(253, 211, 218);
+}
+
+nav{
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(235, 179, 189);
+  box-shadow: 0px 5px 3px #3d020250;
+}
+
+.line{
+  width: 1px;
+  height: 100%;
+  background-color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: black ;
+  font-family: 'Arimo', sans-serif;
+}
+
+h2{
+  margin-left: 40px;
+  font-size: 65px;
+  text-shadow: 2px 2px #ff7f7f;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.input-area{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.enter{
+  display: flex;
+  width: 60% ;
+  justify-content: center;
+}
+
+.enter input {
+  padding: 12px 17px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  width: 60% ; 
+  margin-right: 30px;
+}
+
+.enter button{
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: white ;
+  margin-left: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.enter button:hover{
+  background-color: rgb(112, 91, 91);
+}
+
+.listed-items{
+  margin-top: 50px;
+  border-radius: 12px;
+  width: 50% ;
+  min-height: 200px ;
+  background-color: beige;
+}
+
+.footer button{
+  margin-top: 30px ;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(86, 201, 92);
+  color: rgb(0, 0, 0) ;
+  margin-left: 12px;
+  outline: none;
+  font-size: 21px;
+}
+
+.footer button:hover{
+  background-color: rgb(45, 241, 120);
+}
+
+li div{
+  display: flex;
+  justify-content: space-between;
+}
+
+span:first-child{
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+span:last-child{
+  margin-right: 30px;
+  font-size: 30px;
+  color: rgb(151, 4, 4) ;
+}
