@@ -52,9 +52,10 @@ function submitTasks () {
     array.push(elements[j].innerHTML);
   }
 
-  return array  
+   
   // redirect to the next page
   window.location.href="../views/dragBar.html";
+
  }
 
 function add_listeners () {
@@ -191,7 +192,9 @@ function arrayWork()
   }
 
   for(let i = 0 ; i < BChildren.length; i++){
-    if (task == BChildren[i].innerHTML){
+    if (task == BChildren[i].innmake this happen after a few seconds delay? – Jacqlyn Oct 17 '15 at 13:26
+    51
+    @JFA You could embed the window.location in a timeout function, like this: t1 = window.setTimeouterHTML){
       document.getElementById("B").removeChild(BChildren[i]);
     }
   }

@@ -1,1 +1,21 @@
+html {
+  overflow: auto;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  margin-right: 40px;
+  width: 3px;  /* scrollbar space */
+  color: rgb(0, 0, 0);  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #684e5e;
+  border-radius: 20px;
+  height: 50%;
+}
+
+body{
+  margin: 0 ;
+  background-color: rgb(253, 211, 218);
+}
 /* should do some more stuff */
