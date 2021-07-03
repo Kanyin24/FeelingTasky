@@ -4,6 +4,9 @@ const listA = [], listB = [], listC = [];
 
 
 
+
+
+
 // SECTION 2
 
 const listOfTasks = ["one", "two", "three"];
@@ -92,23 +95,33 @@ const listOfTasks = ["one", "two", "three"];
 
 
 // SECTION 3
-const Work1 = ['English work', 'Finish calc homework', 'Finish French speech']
-let Count = 0;
+//variables declared
 let Length1;
 let Task1;
+<<<<<<< Updated upstream:js/main.js
 //event listener to call ArrayWork
 document.getElementById('next').addEventListener('click', ArrayWork)
 
   
 function ArrayWork(Array1, Array2, Array3)
-{
-    Length1 = Array1.Length - 1;
-    Task1 = Array1[Math.floor(Math.random() * Length)];
-    Task1 = Array1[Task1];
+=======
+let Length2;
+let Task2;
+let Length3;
+let Task3;
+let TrackArray = null;
 
-    //looping through array1
-    /*for (let i = 0; i<Array1.Length; i++)
+function ArrayWork()
+>>>>>>> Stashed changes:main.js
+{
+  let index = null;
+  //call function from above that creates the lists
+    sortRatedTasks();
+
+    //chooses task in list A at random
+    if(TrackArray == null || TrackArray == 'ListC')
     {
+<<<<<<< Updated upstream:js/main.js
         Count = Array1[Math.floor(Math.random() * 4];
     }  */
 
@@ -162,8 +175,37 @@ var timeLeft = setInterval(function() {
 }, 1000);
 }
 
+=======
+      Length1 = ListA.Length - 1;
+      Task1 = Math.floor(Math.random() * Length1);
+      Task1 = ListA[index];
+      TrackArray = 'ListA';
+    }
+    //chooses task in list B at random
+    else if(TrackArray == 'ListA')
+    {
+      Length2 = ListB.Length - 1;
+      Task2 = Math.floor(Math.random() * Length2);
+      Task2 = ListB[index];
+    }
+    //chooses task in list C at random
+    else if(TrackArray == 'ListB')
+    {
+      Length3 = listC.Length - 1;
+      Task3 = Math.floor(Math.random() * Length3);
+      Task3 = listC[index];
+    }
+    
+    //here put the task1 in <p> tag
+    const CurrentTask = document.createElement(Task1);
+>>>>>>> Stashed changes:main.js
 
+    //delete array[index] depending on which one the task chosen is from
+    delete ListA[index];
+    delete ListB[index];
+    delete listC[index];
 
+}
 
 
 
