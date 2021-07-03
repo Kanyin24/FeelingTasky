@@ -38,3 +38,6 @@ document.getElementById('submit').addEventListener('click', submitTasks);
 
 // listen for click on x button and call removeTask
 // document.getElementById('delete').addEventListener('click', removeTask);
+
+
+const thisIs = [0, 1, 2];

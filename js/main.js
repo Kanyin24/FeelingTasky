@@ -9,21 +9,21 @@ const listA = [], listB = [], listC = [];
 
 // SECTION 2
 
-const listOfTasks = ["one", "two", "three"];
+const listOftasks = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
 
   // when the page loads print all the tasks
   document.getElementById("body").onload = () => {
     // Grabbing and declaring elements 
     let draggedItem = null ;
-    const taskListInitial = document.getElementById("initial-list-spot");
+    const tasklistInitial = document.getElementById("initial-list-spot");
     const taskColumns = document.querySelectorAll(".list");
 
-    for (let i = 0 ; i < listOfTasks.length ; i++){
+    for (let i = 0 ; i < listOftasks.length ; i++){
       // Creating and setting properties
       let task = document.createElement("P");
-      task.innerHTML = listOfTasks[i];
-      task.classList.add("task-item");
+      task.innerHTML = listOftasks[i];
       task.setAttribute("draggable", true);
+      task.classList.add("mystyle");
 
       // Adding draggable event listeners
       task.addEventListener('dragstart', (e) => {
@@ -41,26 +41,46 @@ const listOfTasks = ["one", "two", "three"];
       // Making the columns accept dragged items
 
       taskColumns.forEach(col => {
-        col.addEventListener('dragover', e => {e.preventDefault()});
+        col.addEventListener('dragover', e => {
+          e.preventDefault();
+          if (col.id == "initial-list-spot"){
+            col.style.backgroundColor = "#a2767f"
+          } else {
+            col.style.backgroundColor = "#5a5661"
+          }
+        });
         col.addEventListener('dragenter', e => {
           e.preventDefault()
-          col.style.backgroundColor = "rgb(48, 145, 125)"
+          if (col.id == "initial-list-spot"){
+            col.style.backgroundColor = "#a2767f"
+          } else {
+            col.style.backgroundColor = "#5a5661"
+          }
         });
         col.addEventListener('dragleave', e => {
           e.preventDefault()
-          col.style.backgroundColor = "rgb(48, 145, 145)"
+          if (col.id == "initial-list-spot"){
+            col.style.backgroundColor = "#b5838d"
+          } else {
+            col.style.backgroundColor = "#6d6875"
+          }
         });
         col.addEventListener('drop', () => { 
           col.appendChild(draggedItem);
-          col.style.backgroundColor = "rgb(48, 145, 145)";
+          if (col.id == "initial-list-spot"){
+            col.style.backgroundColor = "#b5838d"
+          } else {
+            col.style.backgroundColor = "#6d6875"
+          }
         });
       })
       // Appending to first column
-      taskListInitial.appendChild(task);
+      tasklistInitial.appendChild(task);
     }
   };
 
-  function sortRatedTasks(){
+  function sortRatedtasks(){
+    console.log("we entered");
     const childrenA = document.getElementById("A").children,
           childrenB= document.getElementById("B").children,
           childrenC = document.getElementById("C").children;
@@ -77,105 +97,119 @@ const listOfTasks = ["one", "two", "three"];
     for (let i = 0; i < childrenC.length; i++) {
       listC.push(childrenC[i].innerHTML);
     }
-    
   }
 
-  // this is how you will access array A B C in section 3
-  function getABCarray () {
-    sortRatedTasks();
-    for (let i = 0; i < listA.length; i++) {
-      console.log(listA[i]);
-    }
-  };
+document.getElementById('complete').addEventListener('click', () => {
+  sortRatedtasks();
+  
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
 
-
-
-
-
-
+  arrayWork();
+});
 
 // SECTION 3
-//variables declared
-
-//event listener to call ArrayWork
-document.getElementById('next').addEventListener('click', ArrayWork)
+document.getElementById('next').addEventListener('click', arrayWork);
   
-let Length1;
-let Task;
-let Length2;
-let Length3;
-let TrackArray = null;
+let length;
+let index;
+let task;
+let trackArray = null;
 
-function ArrayWork()
+function arrayWork()
 {
-  let index = null;
   //call function from above that creates the lists
-    sortRatedTasks();
+  const moveOn = document.getElementById("next-task");
+  const currentTask = document.getElementById("current-task");
+  let empty = chooseRandom(trackArray);
 
-    //chooses task in list A at random
-    if(TrackArray == null || TrackArray == 'ListC')
-    {
-      Length1 = ListA.Length - 1;
-      Task = Math.floor(Math.random() * Length1);
-      Task = ListA[index];
-      TrackArray = 'ListA';
-    }
-    //chooses task in list B at random
-    else if(TrackArray == 'ListA')
-    {
-      Length2 = ListB.Length - 1;
-      Task = Math.floor(Math.random() * Length2);
-      Task = ListB[index];
-      TrackArray = 'ListB';
-    }
-    //chooses task in list C at random
-    else if(TrackArray == 'ListB')
-    {
-      Length3 = listC.Length - 1;
-      Task = Math.floor(Math.random() * Length3);
-      Task = listC[index];
-      TrackArray = 'ListC';
-    }
-    
-    //here put the task1 in <p> tag
-    const CurrentTask = document.createElement(Task1);
+  moveOn.style.display = "none";
+      
+  if(empty){
+    empty = chooseRandom(trackArray);
+  } 
+  if (empty){
+    empty = chooseRandom(trackArray);
+  }
+  if (empty){
+    currentTask.innerHTML = "All Tasks Completed" ;
+    task = null ;
+    return;
+  }
 
-    //delete array[index] depending on which one the task chosen is from
-    delete ListA[index];
-    delete ListB[index];
-    delete listC[index];
-
+  // Put the task on the screen
+  currentTask.innerHTML = task ;
 }
 
+function chooseRandom(trackPrevArray){
+  if (trackPrevArray == null || trackPrevArray == 'listB'){
+
+    length = listA.length;
+    if(length <= 0){
+      trackArray = 'listC';
+      return true;
+    }
+
+    index = Math.floor((Math.random() * (length-1)));
+    console.log(index);
+    task = listA[index];
+    trackArray = 'listC';
+    listA.splice(index, 1);
+    return false;
+  }
+
+  if (trackPrevArray == 'listA'){
+
+    length = listB.length;
+    if(length <= 0){
+      trackArray = 'listB';
+      return true;
+    }
+
+    index = Math.floor((Math.random() * (length-1)));
+    console.log(index);
+    task = listB[index];
+    trackArray = 'listB';
+    listB.splice(index, 1);
+    return false;
+  }
+
+  if (trackPrevArray == 'listC'){
+
+    length = listC.length;
+    if(length <= 0){
+      trackArray = 'listA';
+      return true;
+    }
+
+    index = Math.floor((Math.random() * (length-1)));
+    console.log(index);
+    task = listC[index];
+    trackArray = 'listA';
+    listC.splice(index, 1);
+    return false;
+  }
+}
 
 //TIMER
+document.getElementById('setTime').addEventListener('click', addTimeInput);
 
- // add event listener for timer button
- document.getElementById('setTime').addEventListener('click', addTimeInput);
-
- let inputTime;
-
- //adding the input value to the variable for usage of Countdown Timer
+//adding the input value to the variable for usage of Countdown Timer
 function addTimeInput(){
-
+  const moveOn = document.getElementById("next-task");
+  moveOn.style.display = "none";
+  let inputTime, countDownTime, timeLeft, now, timeRemaining;
   inputTime = document.getElementById('time').value *60 * 1000; //convert to milliseconds
-  
-  var countDownTime = new Date().getTime() + inputTime;
- 
-  /*TestCODE
-  var isItWorking = document.createElement("P");
-  isItWorking.innerHTML = inputTime.toString() + "milliseconds";
-  document.body.appendChild(isItWorking); 
-  */
- 
-  // Update the count down every 1 second
-  var timeLeft = setInterval(function() {
 
+  countDownTime = new Date().getTime() + inputTime;
+
+  // Update the count down every 1 second
+  timeLeft = setInterval(() => {
   // Get today's date and time
-  var now = new Date().getTime();
+  now = new Date().getTime();
     
   // Find the distance between now and the count down date
-  var timeRemaining = countDownTime - now;
+  timeRemaining = countDownTime - now;
     
   // Time calculations for days, hours, minutes and seconds
   var hours = Math.floor((timeRemaining % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
@@ -190,9 +224,8 @@ function addTimeInput(){
   if (timeRemaining < 0) {
     clearInterval(timeLeft);
     document.getElementById("countdown").innerHTML = "TIME's UP!";
+    moveOn.style.display = "flex";
+    document.getElementById('time').value = " ";
   }
-}, 1000);
+  }, 900);
 }
-
-
-// SECTION 4

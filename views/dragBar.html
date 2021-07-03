@@ -10,28 +10,55 @@
   </head>
   <body id="body">
 
-    <a href="index.html">Home Page</a>
-    <a href="dragBar.html">Button to get to drag and drop page</a>
+    <nav>
+      <a href="index.html">Home Page</a>
+      <a href="dragBar.html">Button to get to drag and drop page</a>
+    </nav>
 
-   <h1>this is the drag page</h1>
+    
+
+   <h1>Sort Tasks Here</h1>
 
    <div class="task-list">
-    <div class="list" id="initial-list-spot">
+    <div class="sec1">
+      <h3>Tasks</h3>
+      <div class="list" id="initial-list-spot"></div>
     </div>
-     <div class="list" id="A">
-     </div>
-     <div class="list" id="B">
+    <div class="sec2">
+      <h3>Easiest Tasks</h3>
+      <div class="list" id="A"></div>
+      <h3>Average Tasks</h3>
+      <div class="list" id="B"></div>
+      <h3>Procrastinating Tasks</h3>
+      <div class="list" id="C"></div>
     </div>
-    <div class="list" id="C">
-    </div>
-   </div>
-   
-  <p>Please set time for your first task below in minutes: </p>
-  <input type="number", id="time", placeholder="Goal Time in minutes...">
-  <button id="setTime" class="setBtn">Start Timer</button>   
-  <button id="next" class="nextBtn">Next Task</button> 
+  </div>
 
-   <h2 id="countdown"> TIMER! </h2>
+  <div class="start">
+    <button id="complete">Begin Productivity</button>
+  </div>
+    
+  <div class="ongoing-task" id="popup"> 
+    <h2>Randomly Generated Current Task:</h2>
+    <div>
+      <p id="current-task" ></p>
+    </div>
+    <p>Please set time for your first task below in minutes: </p>
+    <input type="number", id="time", placeholder="Goal Time in minutes...">
+    <button id="setTime" class="setBtn">Start Timer</button>   
+     <h2 id="countdown"> TIMER! </h2>
+     <div class="timer-over" id="next-task">
+       <p>If you've finished your task, generate another:</p>
+       <button id="next" class="nextBtn">Generate Random Task</button>
+       <p>If you need more time, reset the timer!</p>
+     </div>
+  </div>
+
+
+   
+   
+   
+
    
    <script src="../js/index.html"></script>
    <script src="../js/main.js"></script>
