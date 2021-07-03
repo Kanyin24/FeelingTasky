@@ -12,12 +12,9 @@
 
     <nav>
       <a href="index.html">Home Page</a>
+      <div class="line"></div>
       <a href="dragBar.html">Button to get to drag and drop page</a>
     </nav>
-
-    
-
-   <h1>Sort Tasks Here</h1>
 
    <div class="task-list">
     <div class="sec1">
@@ -41,12 +38,14 @@
   <div class="ongoing-task" id="popup"> 
     <h2>Randomly Generated Current Task:</h2>
     <div>
-      <p id="current-task" ></p>
+      <p id="current-task"></p>
     </div>
-    <p>Please set time for your first task below in minutes: </p>
-    <input type="number", id="time", placeholder="Goal Time in minutes...">
-    <button id="setTime" class="setBtn">Start Timer</button>   
-     <h2 id="countdown"> TIMER! </h2>
+    <p class="set-time">Please set time for your first task below in minutes: </p>
+    <div class="input-time">
+      <input type="number", id="time", placeholder="Goal Time in minutes...">
+      <button id="setTime" class="setBtn">Start Timer</button>   
+    </div>
+     <h2 id="countdown">0 : 0 : 0</h2>
      <div class="timer-over" id="next-task">
        <p>If you've finished your task, generate another:</p>
        <button id="next" class="nextBtn">Generate Random Task</button>

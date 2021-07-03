@@ -10,7 +10,7 @@ const { app, BrowserWindow, Notification } = require('electron');
 function createWindow() {
   const win = new BrowserWindow({
     width: 850,
-    height: 740,
+    height: 650,
 
   });
 

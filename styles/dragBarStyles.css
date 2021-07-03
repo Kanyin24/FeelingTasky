@@ -1,3 +1,16 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
 body{
   margin: 0 ;
   background-color: rgb(253, 211, 218);
@@ -10,6 +23,13 @@ nav{
   justify-content: space-evenly;
   background-color: rgb(235, 179, 189);
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0px 5px 3px #3d020250;
+}
+
+.line{
+  width: 1px;
+  height: 100%;
+  background-color: black;
 }
 
 nav a {
@@ -21,6 +41,7 @@ nav a {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  margin-top: 45px;
 }
 
 .sec1{
@@ -50,7 +71,7 @@ nav a {
 .sec2 .list{
   margin-bottom: 15px ;
   width: 450px;
-  height: 100px;
+  min-height: 100px;
   background-color: #6d6875;
   box-shadow: 3px 5px #9e0d0d36;
   border-radius: 10px;
@@ -74,7 +95,7 @@ h3{
 
 .sec2 p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .start{
@@ -87,21 +108,28 @@ h3{
 #complete {
   margin: 15px;
   padding: 25px ;
-  background-color: #796370;
+  background-color: #ffffff;
   border: none;
   border-radius: 7px;
   cursor: pointer;
+  box-shadow: 0 8px rgb(41, 9, 9);
+  outline: none ;
+}
+
+#complete:active {
+  box-shadow: 0 4px rgb(41, 9, 9);
+  transform: translateY(4px);
 }
 
 #complete:hover{
-  background-color: #fd9dd5;
+  background-color: #cac1c1;
 }
 
 .ongoing-task{
   justify-self: center;
-  margin: 0 auto ;
+  margin: 40px auto 150px auto;
   display: none;
-  width: 50%;
+  width: 70%;
   height: 50% ;
   background-color: #ffcdb2;
   border-radius: 15px;
@@ -114,4 +142,74 @@ h3{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h2{
+  font-size: 20px;
+}
+
+#current-task{
+  font-size: 45px; 
+  margin: 15px;
+}
+
+.set-time{
+  max-width: 180px;
+  text-align: center;
+  margin-top: 0 ;
+}
+
+.input-time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-time input{
+  padding: 17px ;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-time button{
+  padding: 17px ;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: white ;
+  margin-left: 12px;
+  outline: none;
+}
+
+.input-time button:hover{
+  background-color: rgb(68, 21, 21);
+}
+
+#countdown{
+  text-align: center;
+  font-size: 110px;
+  margin: 20px 20px 0 20px;
+  color: white;
+  text-shadow: 3px 3px #ff0000;
+}
+
+.timer-over button{
+  padding: 17px ;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: white ;
+  margin-left: 12px;
+  outline: none;
+}
+
+.timer-over button:hover{
+  background-color: rgb(68, 21, 21);
+}
+
+.timer-over p{
+  text-align: center;
+  max-width: 200px;
+  margin-top: 10px ;
 }

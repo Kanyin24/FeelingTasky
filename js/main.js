@@ -106,6 +106,8 @@ document.getElementById('complete').addEventListener('click', () => {
   popup.style.display = "flex";
 
   arrayWork();
+
+  popup.scrollIntoView();
 });
 
 // SECTION 3
@@ -124,6 +126,7 @@ function arrayWork()
   let empty = chooseRandom(trackArray);
 
   moveOn.style.display = "none";
+  document.getElementById("countdown").innerHTML = "0 : 0 : 0";
       
   if(empty){
     empty = chooseRandom(trackArray);
@@ -217,13 +220,13 @@ function addTimeInput(){
   var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
     
   // Output the result in an element
-  document.getElementById("countdown").innerHTML = hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("countdown").innerHTML = hours + " : "
+  + minutes + " : " + seconds;
     
   // If the count down is over, write 
   if (timeRemaining < 0) {
     clearInterval(timeLeft);
-    document.getElementById("countdown").innerHTML = "TIME's UP!";
+    document.getElementById("countdown").innerHTML = "TIME's UP";
     moveOn.style.display = "flex";
     document.getElementById('time').value = " ";
   }
