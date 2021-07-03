@@ -3,9 +3,9 @@ const fs = require('fs');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1920,
-    height: 1080,
 
+    width: 960,
+    height: 690,
   });
 
   win.loadFile('./views/index.html');

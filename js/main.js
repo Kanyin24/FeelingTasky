@@ -30,8 +30,6 @@ function addTaskToList () {
   } else {
     console.log(task);
   }
-
-
 }
 
 function submitTasks () {
@@ -48,7 +46,6 @@ function submitTasks () {
   // redirect to the next page
   window.location.href="../views/dragBar.html";
  }
-
 
 function add_listeners () {
   // listen for click on add button and call addTaskToList
@@ -152,7 +149,7 @@ const listOftasks = ["one", "two", "three", "four", "five", "six", "seven", "eig
     }
   }
 
-document.getElementById('complete').addEventListener('click', () => {
+  document.getElementById('complete').addEventListener('click', () => {
   sortRatedtasks();
   
   const popup = document.getElementById("popup");
@@ -173,6 +170,28 @@ let trackArray = null;
 
 function arrayWork()
 {
+
+  const AChildren = document.getElementById("A").childNodes;
+  const BChildren = document.getElementById("B").childNodes;
+  const CChildren = document.getElementById("C").childNodes;
+  for(let i = 0 ; i < AChildren.length; i++){
+    if (task == AChildren[i].innerHTML){
+      document.getElementById("A").removeChild(AChildren[i]);
+    }
+  }
+
+  for(let i = 0 ; i < BChildren.length; i++){
+    if (task == BChildren[i].innerHTML){
+      document.getElementById("B").removeChild(BChildren[i]);
+    }
+  }
+
+  for(let i = 0 ; i < CChildren.length; i++){
+    if (task == CChildren[i].innerHTML){
+      document.getElementById("C").removeChild(CChildren[i]);
+    }
+  }
+
   //call function from above that creates the lists
   const moveOn = document.getElementById("next-task");
   const currentTask = document.getElementById("current-task");
