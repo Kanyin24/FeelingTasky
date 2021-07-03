@@ -198,38 +198,46 @@ function chooseRandom(trackPrevArray){
 //TIMER
 document.getElementById('setTime').addEventListener('click', addTimeInput);
 
+
 //adding the input value to the variable for usage of Countdown Timer
 function addTimeInput(){
-  const moveOn = document.getElementById("next-task");
-  moveOn.style.display = "none";
-  let inputTime, countDownTime, timeLeft, now, timeRemaining;
-  inputTime = document.getElementById('time').value *60 * 1000; //convert to milliseconds
-
-  countDownTime = new Date().getTime() + inputTime;
-
-  // Update the count down every 1 second
-  timeLeft = setInterval(() => {
-  // Get today's date and time
-  now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  timeRemaining = countDownTime - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var hours = Math.floor((timeRemaining % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-    
-  // Output the result in an element
-  document.getElementById("countdown").innerHTML = hours + " : "
-  + minutes + " : " + seconds;
-    
-  // If the count down is over, write 
-  if (timeRemaining < 0) {
-    clearInterval(timeLeft);
-    document.getElementById("countdown").innerHTML = "TIME's UP";
-    moveOn.style.display = "flex";
-    document.getElementById('time').value = " ";
+  //repeat until a time is given
+  if (document.getElementById('time').value == 0){
+    document.getElementById("countdown").innerHTML = "Please enter a number";
   }
-  }, 900);
+  else
+  {
+      const moveOn = document.getElementById("next-task");
+      moveOn.style.display = "none";
+      let inputTime, countDownTime, timeLeft, now, timeRemaining;
+      inputTime = document.getElementById('time').value *60 * 1000; //convert to milliseconds
+
+      countDownTime = new Date().getTime() + inputTime;
+
+      // Update the count down every 1 second
+      timeLeft = setInterval(() => {
+      // Get today's date and time
+      now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      timeRemaining = countDownTime - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var hours = Math.floor((timeRemaining % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        
+      // Output the result in an element
+      document.getElementById("countdown").innerHTML = hours + " : "
+      + minutes + " : " + seconds;
+        
+      // If the count down is over, write 
+      if (timeRemaining < 0) {
+        clearInterval(timeLeft);
+        document.getElementById("countdown").innerHTML = "TIME's UP";
+        moveOn.style.display = "flex";
+        document.getElementById('time').value = " ";
+      }
+      }, 900);
+    }
 }
