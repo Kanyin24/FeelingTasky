@@ -98,65 +98,51 @@ const listOfTasks = ["one", "two", "three"];
 //variables declared
 
 //event listener to call ArrayWork
-document.getElementById("next").addEventListener('click', arrayWork)
+document.getElementById('next').addEventListener('click', ArrayWork)
   
-let length1;
-let task1;
-let length2;
-let task2;
-let length3;
-let task3;
-let trackArray = null;
+let Length1;
+let Task;
+let Length2;
+let Length3;
+let TrackArray = null;
 
-function arrayWork()
+function ArrayWork()
 {
   let index = null;
   //call function from above that creates the lists
     sortRatedTasks();
 
     //chooses task in list A at random
-    if(trackArray == null || trackArray == 'ListC')
+    if(TrackArray == null || TrackArray == 'ListC')
     {
-      length1 = listA.length - 1;
-      task1 = Math.floor(Math.random() * length1);
-      task1 = listA[index];
-      trackArray = 'ListA';
+      Length1 = ListA.Length - 1;
+      Task = Math.floor(Math.random() * Length1);
+      Task = ListA[index];
+      TrackArray = 'ListA';
     }
     //chooses task in list B at random
-    else if(trackArray == 'ListA')
+    else if(TrackArray == 'ListA')
     {
-<<<<<<< Updated upstream
-      length2 = listB.length - 1;
-      task2 = Math.floor(Math.random() * length2);
-      task2 = listB[index];
-=======
       Length2 = ListB.Length - 1;
-      Task2 = Math.floor(Math.random() * Length2);
-      Task2 = ListB[index];
+      Task = Math.floor(Math.random() * Length2);
+      Task = ListB[index];
       TrackArray = 'ListB';
->>>>>>> Stashed changes
     }
     //chooses task in list C at random
-    else if(trackArray == 'ListB')
+    else if(TrackArray == 'ListB')
     {
-<<<<<<< Updated upstream
-      length3 = listC.Length - 1;
-      task3 = Math.floor(Math.random() * length3);
-      task3 = listC[index];
-=======
       Length3 = listC.Length - 1;
-      Task3 = Math.floor(Math.random() * Length3);
-      Task3 = listC[index];
+      Task = Math.floor(Math.random() * Length3);
+      Task = listC[index];
       TrackArray = 'ListC';
->>>>>>> Stashed changes
     }
     
     //here put the task1 in <p> tag
-    const CurrentTask = document.createElement(task1);
+    const CurrentTask = document.createElement(Task1);
 
     //delete array[index] depending on which one the task chosen is from
-    delete listA[index];
-    delete listB[index];
+    delete ListA[index];
+    delete ListB[index];
     delete listC[index];
 
 }
