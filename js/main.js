@@ -125,16 +125,30 @@ function arrayWork()
     //chooses task in list B at random
     else if(trackArray == 'ListA')
     {
+<<<<<<< Updated upstream
       length2 = listB.length - 1;
       task2 = Math.floor(Math.random() * length2);
       task2 = listB[index];
+=======
+      Length2 = ListB.Length - 1;
+      Task2 = Math.floor(Math.random() * Length2);
+      Task2 = ListB[index];
+      TrackArray = 'ListB';
+>>>>>>> Stashed changes
     }
     //chooses task in list C at random
     else if(trackArray == 'ListB')
     {
+<<<<<<< Updated upstream
       length3 = listC.Length - 1;
       task3 = Math.floor(Math.random() * length3);
       task3 = listC[index];
+=======
+      Length3 = listC.Length - 1;
+      Task3 = Math.floor(Math.random() * Length3);
+      Task3 = listC[index];
+      TrackArray = 'ListC';
+>>>>>>> Stashed changes
     }
     
     //here put the task1 in <p> tag
