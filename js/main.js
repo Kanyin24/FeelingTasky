@@ -1,9 +1,10 @@
 const listA = [], listB = [], listC = [];
 // SECTION 1
 
+// let module = require("./stageone.js");
+// let array = module.array;
 
-
-
+// console.log(array);
 
 
 
