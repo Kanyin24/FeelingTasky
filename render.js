@@ -10,8 +10,4 @@ function createWindow() {
 
   win.loadFile('./views/index.html');
 }
-
-
 app.whenReady().then(createWindow); 
-
-

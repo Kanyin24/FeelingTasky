@@ -28,7 +28,14 @@ function addTaskToList () {
   if (task === ' ' || task === '') {
     alert('Please add a task! Blank tasks aren\'t accepted.');
   } else {
-    console.log(task);
+    let tasklist = document.getElementByTagName("UL");
+    let text = document.createTextNode(task);
+    let element = document.createElement("LI");
+    element.appendChild(text);
+
+    tasklist.appendChild(element);
+
+    
   }
 }
 
