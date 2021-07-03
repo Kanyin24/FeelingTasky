@@ -298,8 +298,15 @@ if (window.location.href.includes("dragBar.html")){
           
         // If the count down is over, write 
         if (timeRemaining < 0) {
+          const NOTIFICATION_TITLE = 'Time\'s Up!'
+          const NOTIFICATION_BODY = 'Time to move on to the next task. :)'
+          
+
+          new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY })
+            
+
           clearInterval(timeLeft);
-          document.getElementById("countdown").innerHTML = "TIME's UP";
+          document.getElementById("countdown").innerHTML = "TIME'S UP";
           moveOn.style.display = "flex";
           document.getElementById('time').value = " ";
         }

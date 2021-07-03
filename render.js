@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Notification } = require('electron');
 const fs = require('fs');
 
 function createWindow() {
@@ -9,5 +9,11 @@ function createWindow() {
   });
 
   win.loadFile('./views/index.html');
+
+
 }
-app.whenReady().then(createWindow); 
+
+app.whenReady().then(createWindow);
+
+
+
