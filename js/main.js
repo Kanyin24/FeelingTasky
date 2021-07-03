@@ -98,51 +98,51 @@ const listOfTasks = ["one", "two", "three"];
 //variables declared
 
 //event listener to call ArrayWork
-document.getElementById('next').addEventListener('click', ArrayWork)
+document.getElementById("next").addEventListener('click', arrayWork)
   
-let Length1;
-let Task1;
-let Length2;
-let Task2;
-let Length3;
-let Task3;
-let TrackArray = null;
+let length1;
+let task1;
+let length2;
+let task2;
+let length3;
+let task3;
+let trackArray = null;
 
-function ArrayWork()
+function arrayWork()
 {
   let index = null;
   //call function from above that creates the lists
     sortRatedTasks();
 
     //chooses task in list A at random
-    if(TrackArray == null || TrackArray == 'ListC')
+    if(trackArray == null || trackArray == 'ListC')
     {
-      Length1 = ListA.Length - 1;
-      Task1 = Math.floor(Math.random() * Length1);
-      Task1 = ListA[index];
-      TrackArray = 'ListA';
+      length1 = listA.length - 1;
+      task1 = Math.floor(Math.random() * length1);
+      task1 = listA[index];
+      trackArray = 'ListA';
     }
     //chooses task in list B at random
-    else if(TrackArray == 'ListA')
+    else if(trackArray == 'ListA')
     {
-      Length2 = ListB.Length - 1;
-      Task2 = Math.floor(Math.random() * Length2);
-      Task2 = ListB[index];
+      length2 = listB.length - 1;
+      task2 = Math.floor(Math.random() * length2);
+      task2 = listB[index];
     }
     //chooses task in list C at random
-    else if(TrackArray == 'ListB')
+    else if(trackArray == 'ListB')
     {
-      Length3 = listC.Length - 1;
-      Task3 = Math.floor(Math.random() * Length3);
-      Task3 = listC[index];
+      length3 = listC.Length - 1;
+      task3 = Math.floor(Math.random() * length3);
+      task3 = listC[index];
     }
     
     //here put the task1 in <p> tag
-    const CurrentTask = document.createElement(Task1);
+    const CurrentTask = document.createElement(task1);
 
     //delete array[index] depending on which one the task chosen is from
-    delete ListA[index];
-    delete ListB[index];
+    delete listA[index];
+    delete listB[index];
     delete listC[index];
 
 }
