@@ -162,11 +162,11 @@ function addTimeInput(){
   
   var countDownTime = new Date().getTime() + inputTime;
  
-  //TestCODE
+  /*TestCODE
   var isItWorking = document.createElement("P");
   isItWorking.innerHTML = inputTime.toString() + "milliseconds";
   document.body.appendChild(isItWorking); 
-  //
+  */
  
   // Update the count down every 1 second
   var timeLeft = setInterval(function() {
