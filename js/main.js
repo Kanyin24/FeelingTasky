@@ -29,10 +29,14 @@ if (window.location.href.includes("index.html")){
     if (task === ' ' || task === '') {
       alert('Please add a task! Blank tasks aren\'t accepted.');
     } else {
-      console.log(task);
+      let tasklist = document.getElementByTagName("UL");
+      let text = document.createTextNode(task);
+      let element = document.createElement("LI");
+      element.appendChild(text);
+
+      tasklist.appendChild(element);
     }
   }
-
   function submitTasks () {
     // gather unordered list into array
     let array = [];
