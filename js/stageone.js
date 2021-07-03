@@ -7,7 +7,6 @@
 // creates the close button for each item in the list
 const myNodelist = document.getElementsByTagName('LI');
 let i = 0;
-addTaskToList()
 for (i = 0; i < myNodelist.length; i += 1) {
   let span = document.createElement('SPAN');
   let txt = document.createElement('P'); // this is the P tag
@@ -30,10 +29,12 @@ for (j = 0; j < close.length; j += 1) {
   };
 }
 
-function addTaskToList() {
-  // let input = document.getElementById('zero');
-  document.write();
+
+function submitTasks () {
+  window.location.href='https://google.com'; 
 }
+
+
 
 // listen for click on add button and call addTaskToList
 document.getElementById('add').addEventListener('click', addTaskToList);
@@ -42,4 +43,4 @@ document.getElementById('add').addEventListener('click', addTaskToList);
 document.getElementById('submit').addEventListener('click', submitTasks);
 
 // listen for click on x button and call removeTask
-document.getElementById('delete').addEventListener('click', removeTask);
+// document.getElementById('delete').addEventListener('click', removeTask);

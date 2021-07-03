@@ -4,38 +4,37 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <link rel="stylesheet" href="stageone.css">
+    <link rel="stylesheet" href="../styles/stageone.css">
+    <script src="../js/index.js"></script>
+    <script src="../js/stageone.js"></script>
+    <script src="../js/main.js"></script>
    </head>
 
   <body>
-    <!-- development links -->
     <a href="index.html">Home</a>
     <br><br><br>
     <a href="dragBar.html">Drag and Drop</a>
     
-    <div id="start" class="header">
+    <div class="header">
       <h2>To Do List</h2>
       <input type="text", id="zero", placeholder="Task...">
-      <button id="add" class="addBtn">Add</button>
+      <button id="add" class="Btn">Add</button>
     </div>
 
-    <!-- <button id="delete">Delete a task.</button> -->
-    <div class="body"></div>
-    <ul id="tasks">
-      <li>Taking out the trash.</li>
-      <li>Doing the laundry.</li>
-      <li>Feeding and bathing the cat.</li>
-    </ul>
+    <div class="body">
+      <ul id="tasks">
+        <li>Taking out the trash.</li>
+        <li>Doing the laundry.</li>
+        <li>Feeding and bathing the cat.</li>
+      </ul>
+    </div>
+    
 
     <!-- need to implement the function here -->
-    <div id="next" class="footer">
-      <a id="submit" class="Btn" href="dragBar.html">I'm done.</a>
+    <div class="footer">
+
+      <button id="submit" class="Btn" >I'm done.</button>
     </div>
-
-    <script src="../js/index.js"></script>
-    <script src="../js/stageone.js"></script>
-    <script src="../js/main.js"></script>
-
   </body>
 </html>
 
