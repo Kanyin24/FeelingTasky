@@ -10,7 +10,7 @@ let i = 0;
 for (i = 0; i < myNodelist.length; i += 1) {
   let span = document.createElement('SPAN');
   let txt = document.createElement('P'); // this is the P tag
-  span.className = 'close'; // name for reference later
+  span.classList.add("mystyle"); // name for reference later
   txt.innerHTML = '\u00D7';
   span.appendChild(txt);
 
