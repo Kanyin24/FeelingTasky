@@ -2,7 +2,7 @@
 Project for AtlasHacks II. 
 
 ## Demo Video!
-###### soon to come...
+Watch [here](https://www.youtube.com/watch?v=Tjfr8At5-d0) on YouTube.
 
 ## Team Members:
 - Kanyinsola 
